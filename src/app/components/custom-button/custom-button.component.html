@@ -1,0 +1,4 @@
+<ion-button shape="round" class="btn" [class]="color" (click)="handleClick()">
+  <ion-icon *ngIf="showIcon" [slot]="position" [name]="getButtonIcon()"></ion-icon>
+  {{ getButtonText() }}
+</ion-button>
