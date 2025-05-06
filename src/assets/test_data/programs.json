@@ -20,8 +20,9 @@
                 "value": "Master of Science"
             },
             {
-                "name": "Tuition",
-                "value": "€726.72 per semester"
+                "name": "amount",
+                "value": 726.72,
+                "currency": "USD"
             },
             {
                 "name": "Study Mode",
@@ -29,46 +30,48 @@
             },
             {
                 "name": "Language",
-                "value": "English"
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Completed relevant degree program",
             "Copy of a valid Identification Card or Passport",
             "Degree Diploma",
-            "Documents of completed university degree with a minimum study duration of three years (bachelor’s or diploma)"
+            "Documents of completed university degree with a minimum study duration of three years (bachelor's or diploma)"
         ],
         "structure": "Studying Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz opens up a world of opportunities. By combining various disciplines and developing cross-sectional.",
         "feeBreakdown": [
             {
-                "price": 1500,
+                "amount": 1500,
                 "currency": "USD",
                 "description": "Housing Fee"
             },
             {
-                "price": 20,
+                "amount": 20,
                 "currency": "USD",
                 "description": "Acceptance Fee"
             },
             {
-                "price": 300,
+                "amount": 300,
                 "currency": "USD",
-                "description": "Tuition Fee"
+                "description": "amount Fee"
             },
             {
-                "price": 300,
+                "amount": 300,
                 "currency": "USD",
                 "description": "Application Fee"
             },
             {
-                "price": 300,
+                "amount": 300,
                 "currency": "USD",
                 "description": "Living Fee"
             }
         ],
         "additionalInfo": {
             "intake": "Winter 2024",
-            "location": "Main, Portierloge Wall, Portierloge ReSoWi, Portierloge Hauptgebäude",
+            "location": "Main, Portierloge Wall, Portierloge ReSoWi, Portierloge Hauptgebäude",
             "applicationDeadline": "2024-05-15"
         }
     },
@@ -93,8 +96,9 @@
                 "value": "Master of Engineering"
             },
             {
-                "name": "Tuition",
-                "value": "€363.36 per semester"
+                "name": "amount",
+                "value": 363.36,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
@@ -102,25 +106,34 @@
             },
             {
                 "name": "Language",
-                "value": "English/German"
+                "value": [
+                    "EN",
+                    "DE"
+                ]
             }
         ],
         "requirements": [
             "Relevant bachelor's degree",
             "Portfolio of relevant work",
-            "Motivation letter"
+            "Motivation letter",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core courses in urban ecology, electives in policy or design, and practical fieldwork components.",
         "feeBreakdown": [
             {
-                "price": 726,
+                "amount": 726,
                 "currency": "EUR",
-                "description": "Annual Tuition"
+                "description": "Annual amount"
             },
             {
-                "price": 50,
+                "amount": 50,
                 "currency": "EUR",
                 "description": "Application Fee"
+            },
+            {
+                "amount": 300,
+                "currency": "EUR",
+                "description": "Student Services Fee"
             }
         ],
         "additionalInfo": {
@@ -150,35 +163,50 @@
                 "value": "Master of Research"
             },
             {
-                "name": "Tuition",
-                "value": "€2,100 per year"
+                "name": "amount",
+                "value": 2100,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time with fieldwork"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "ES"
+                ]
             }
         ],
         "requirements": [
             "Biology or environmental science background",
             "Research proposal",
-            "Diving certification (recommended)"
+            "Diving certification (recommended)",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Combination of coursework, laboratory research, and mandatory marine fieldwork expeditions.",
         "feeBreakdown": [
             {
-                "price": 2100,
+                "amount": 2100,
                 "currency": "EUR",
-                "description": "Tuition Fee"
+                "description": "amount Fee"
             },
             {
-                "price": 300,
+                "amount": 300,
                 "currency": "EUR",
                 "description": "Fieldwork Equipment"
+            },
+            {
+                "amount": 150,
+                "currency": "EUR",
+                "description": "Student Association Fee"
             }
         ],
         "additionalInfo": {
             "intake": "Fall 2024",
-            "location": "Barcelona Marine Campus"
+            "location": "Barcelona Marine Campus",
+            "applicationDeadline": "2024-06-30"
         }
     },
     {
@@ -202,35 +230,49 @@
                 "value": "MSc"
             },
             {
-                "name": "Tuition",
-                "value": "£15,000 total"
+                "name": "amount",
+                "value": 15000,
+                "currency": "GBP"
             },
             {
                 "name": "Study Mode",
                 "value": "Intensive"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Engineering bachelor's degree",
             "2:1 or equivalent",
-            "IELTS 7.0"
+            "IELTS 7.0",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core modules in solar, wind, and storage technologies plus a research dissertation.",
         "feeBreakdown": [
             {
-                "price": 15000,
+                "amount": 15000,
                 "currency": "GBP",
                 "description": "Program Fee"
             },
             {
-                "price": 500,
+                "amount": 500,
                 "currency": "GBP",
                 "description": "Lab Fees"
+            },
+            {
+                "amount": 200,
+                "currency": "GBP",
+                "description": "Examination Fee"
             }
         ],
         "additionalInfo": {
             "intake": "October 2024",
-            "location": "South Kensington Campus"
+            "location": "South Kensington Campus",
+            "applicationDeadline": "2024-07-15"
         }
     },
     {
@@ -254,35 +296,51 @@
                 "value": "Master of Arts"
             },
             {
-                "name": "Tuition",
-                "value": "€400 per semester"
+                "name": "amount",
+                "value": 400,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "FR",
+                    "DE"
+                ]
             }
         ],
         "requirements": [
             "Social sciences background",
             "Policy analysis sample",
-            "French language (B2 level)"
+            "French language (B2 level)",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core policy courses, specialization tracks, and mandatory internship.",
         "feeBreakdown": [
             {
-                "price": 800,
+                "amount": 800,
                 "currency": "EUR",
-                "description": "Annual Tuition"
+                "description": "Annual amount"
             },
             {
-                "price": 100,
+                "amount": 100,
                 "currency": "EUR",
                 "description": "Administrative Fees"
+            },
+            {
+                "amount": 50,
+                "currency": "EUR",
+                "description": "Student Card Fee"
             }
         ],
         "additionalInfo": {
             "intake": "September 2024",
-            "location": "Belval Campus"
+            "location": "Belval Campus",
+            "applicationDeadline": "2024-05-31"
         }
     },
     {
@@ -306,35 +364,49 @@
                 "value": "MSc"
             },
             {
-                "name": "Tuition",
-                "value": "£18,500 total"
+                "name": "amount",
+                "value": 18500,
+                "currency": "GBP"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Social science or development background",
             "2 years relevant experience",
-            "Academic writing sample"
+            "Academic writing sample",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core modules plus fieldwork component in partner country.",
         "feeBreakdown": [
             {
-                "price": 18500,
+                "amount": 18500,
                 "currency": "GBP",
-                "description": "Tuition Fee"
+                "description": "amount Fee"
             },
             {
-                "price": 1500,
+                "amount": 1500,
                 "currency": "GBP",
                 "description": "Fieldwork Grant"
+            },
+            {
+                "amount": 250,
+                "currency": "GBP",
+                "description": "Registration Fee"
             }
         ],
         "additionalInfo": {
             "intake": "September 2024",
-            "location": "Brighton Campus"
+            "location": "Brighton Campus",
+            "applicationDeadline": "2024-06-30"
         }
     },
     {
@@ -358,35 +430,50 @@
                 "value": "Master of Science"
             },
             {
-                "name": "Tuition",
-                "value": "€2,168 per year"
+                "name": "amount",
+                "value": 2168,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "NL"
+                ]
             }
         ],
         "requirements": [
             "BSc in agriculture or related field",
             "Mathematics proficiency",
-            "Research proposal"
+            "Research proposal",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core courses plus specialization in plant, animal, or social systems.",
         "feeBreakdown": [
             {
-                "price": 2168,
+                "amount": 2168,
                 "currency": "EUR",
-                "description": "Annual Tuition"
+                "description": "Annual amount"
             },
             {
-                "price": 500,
+                "amount": 500,
                 "currency": "EUR",
                 "description": "Lab Fees"
+            },
+            {
+                "amount": 100,
+                "currency": "EUR",
+                "description": "Student Services Fee"
             }
         ],
         "additionalInfo": {
             "intake": "September 2024",
-            "location": "Wageningen Campus"
+            "location": "Wageningen Campus",
+            "applicationDeadline": "2024-05-01"
         }
     },
     {
@@ -410,35 +497,49 @@
                 "value": "MSc"
             },
             {
-                "name": "Tuition",
-                "value": "£28,000 total"
+                "name": "amount",
+                "value": 28000,
+                "currency": "GBP"
             },
             {
                 "name": "Study Mode",
                 "value": "Intensive"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Economics degree",
             "Strong quantitative background",
-            "GRE recommended"
+            "GRE recommended",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core econometrics plus environmental applications and dissertation.",
         "feeBreakdown": [
             {
-                "price": 28000,
+                "amount": 28000,
                 "currency": "GBP",
                 "description": "Program Fee"
             },
             {
-                "price": 200,
+                "amount": 200,
                 "currency": "GBP",
                 "description": "Examination Fees"
+            },
+            {
+                "amount": 100,
+                "currency": "GBP",
+                "description": "Library Access Fee"
             }
         ],
         "additionalInfo": {
             "intake": "October 2024",
-            "location": "Central London"
+            "location": "Central London",
+            "applicationDeadline": "2024-06-30"
         }
     },
     {
@@ -462,35 +563,50 @@
                 "value": "Master of Engineering"
             },
             {
-                "name": "Tuition",
-                "value": "CHF 730 per semester"
+                "name": "amount",
+                "value": 730,
+                "currency": "CHF"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "DE"
+                ]
             }
         ],
         "requirements": [
             "Civil/environmental engineering background",
             "Hydrology coursework",
-            "German proficiency (B2)"
+            "German proficiency (B2)",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core water science courses plus management modules and field project.",
         "feeBreakdown": [
             {
-                "price": 730,
+                "amount": 730,
                 "currency": "CHF",
                 "description": "Semester Fee"
             },
             {
-                "price": 300,
+                "amount": 300,
                 "currency": "CHF",
                 "description": "Field Trip Costs"
+            },
+            {
+                "amount": 100,
+                "currency": "CHF",
+                "description": "Student Association Fee"
             }
         ],
         "additionalInfo": {
             "intake": "September 2024",
-            "location": "Hönggerberg Campus"
+            "location": "Hönggerberg Campus",
+            "applicationDeadline": "2024-04-30"
         }
     },
     {
@@ -514,35 +630,49 @@
                 "value": "Master of Environmental Management"
             },
             {
-                "name": "Tuition",
-                "value": "CAD 12,000 per year"
+                "name": "amount",
+                "value": 12000,
+                "currency": "CAD"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time with co-op"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Relevant undergraduate degree",
             "Professional experience preferred",
-            "Statement of intent"
+            "Statement of intent",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core courses plus specialization and mandatory internship.",
         "feeBreakdown": [
             {
-                "price": 12000,
+                "amount": 12000,
                 "currency": "CAD",
-                "description": "Annual Tuition"
+                "description": "Annual amount"
             },
             {
-                "price": 800,
+                "amount": 800,
                 "currency": "CAD",
                 "description": "Student Fees"
+            },
+            {
+                "amount": 500,
+                "currency": "CAD",
+                "description": "Co-op Placement Fee"
             }
         ],
         "additionalInfo": {
             "intake": "January 2025",
-            "location": "Vancouver Campus"
+            "location": "Vancouver Campus",
+            "applicationDeadline": "2024-09-30"
         }
     },
     {
@@ -566,35 +696,49 @@
                 "value": "LLM"
             },
             {
-                "name": "Tuition",
-                "value": "$65,000 total"
+                "name": "amount",
+                "value": 65000,
+                "currency": "USD"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Law degree (JD or equivalent)",
             "Personal statement",
-            "Letters of recommendation"
+            "Letters of recommendation",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core law courses plus environmental electives and writing requirement.",
         "feeBreakdown": [
             {
-                "price": 65000,
+                "amount": 65000,
                 "currency": "USD",
                 "description": "Program Fee"
             },
             {
-                "price": 5000,
+                "amount": 5000,
                 "currency": "USD",
                 "description": "Health Insurance"
+            },
+            {
+                "amount": 1000,
+                "currency": "USD",
+                "description": "Legal Research Fee"
             }
         ],
         "additionalInfo": {
             "intake": "August 2024",
-            "location": "Stanford Campus"
+            "location": "Stanford Campus",
+            "applicationDeadline": "2024-02-01"
         }
     },
     {
@@ -618,35 +762,49 @@
                 "value": "Master of Science"
             },
             {
-                "name": "Tuition",
-                "value": "AUD 36,000 per year"
+                "name": "amount",
+                "value": 36000,
+                "currency": "AUD"
             },
             {
                 "name": "Study Mode",
                 "value": "Research-focused"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Biology or ecology background",
             "Research experience",
-            "Thesis proposal"
+            "Thesis proposal",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Coursework plus major research project with fieldwork component.",
         "feeBreakdown": [
             {
-                "price": 36000,
+                "amount": 36000,
                 "currency": "AUD",
-                "description": "Annual Tuition"
+                "description": "Annual amount"
             },
             {
-                "price": 2000,
+                "amount": 2000,
                 "currency": "AUD",
                 "description": "Fieldwork Costs"
+            },
+            {
+                "amount": 500,
+                "currency": "AUD",
+                "description": "Research Materials Fee"
             }
         ],
         "additionalInfo": {
             "intake": "February 2025",
-            "location": "St Lucia Campus"
+            "location": "St Lucia Campus",
+            "applicationDeadline": "2024-10-31"
         }
     },
     {
@@ -670,35 +828,50 @@
                 "value": "Master of Science"
             },
             {
-                "name": "Tuition",
-                "value": "SEK 145,000 per year"
+                "name": "amount",
+                "value": 145000,
+                "currency": "SEK"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "SV"
+                ]
             }
         ],
         "requirements": [
             "Engineering or physics background",
             "Calculus and thermodynamics",
-            "Motivation letter"
+            "Motivation letter",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core energy courses plus specialization tracks and degree project.",
         "feeBreakdown": [
             {
-                "price": 145000,
+                "amount": 145000,
                 "currency": "SEK",
-                "description": "Annual Tuition"
+                "description": "Annual amount"
             },
             {
-                "price": 5000,
+                "amount": 5000,
                 "currency": "SEK",
                 "description": "Student Union Fee"
+            },
+            {
+                "amount": 2000,
+                "currency": "SEK",
+                "description": "Lab Access Fee"
             }
         ],
         "additionalInfo": {
             "intake": "August 2024",
-            "location": "Stockholm Campus"
+            "location": "Stockholm Campus",
+            "applicationDeadline": "2024-01-15"
         }
     },
     {
@@ -722,35 +895,49 @@
                 "value": "MPH"
             },
             {
-                "name": "Tuition",
-                "value": "$58,000 total"
+                "name": "amount",
+                "value": 58000,
+                "currency": "USD"
             },
             {
                 "name": "Study Mode",
                 "value": "Intensive"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Science or health background",
             "Statistics coursework",
-            "Professional experience preferred"
+            "Professional experience preferred",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core public health courses plus environmental focus and practicum.",
         "feeBreakdown": [
             {
-                "price": 58000,
+                "amount": 58000,
                 "currency": "USD",
                 "description": "Program Fee"
             },
             {
-                "price": 2000,
+                "amount": 2000,
                 "currency": "USD",
                 "description": "Lab Fees"
+            },
+            {
+                "amount": 1000,
+                "currency": "USD",
+                "description": "Health Services Fee"
             }
         ],
         "additionalInfo": {
             "intake": "June 2024",
-            "location": "Baltimore Campus"
+            "location": "Baltimore Campus",
+            "applicationDeadline": "2024-03-01"
         }
     },
     {
@@ -774,35 +961,50 @@
                 "value": "MSc"
             },
             {
-                "name": "Tuition",
-                "value": "€2,209 per year"
+                "name": "amount",
+                "value": 2209,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "NL"
+                ]
             }
         ],
         "requirements": [
             "Engineering or science background",
             "Materials science coursework",
-            "Research proposal"
+            "Research proposal",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core courses plus specialization and industry internship.",
         "feeBreakdown": [
             {
-                "price": 2209,
+                "amount": 2209,
                 "currency": "EUR",
-                "description": "Annual Tuition"
+                "description": "Annual amount"
             },
             {
-                "price": 500,
+                "amount": 500,
                 "currency": "EUR",
                 "description": "Lab Fees"
+            },
+            {
+                "amount": 150,
+                "currency": "EUR",
+                "description": "Student Services Fee"
             }
         ],
         "additionalInfo": {
             "intake": "September 2024",
-            "location": "Delft Campus"
+            "location": "Delft Campus",
+            "applicationDeadline": "2024-04-01"
         }
     },
     {
@@ -826,35 +1028,50 @@
                 "value": "Master of Business Administration"
             },
             {
-                "name": "Tuition",
-                "value": "€14,500 total"
+                "name": "amount",
+                "value": 14500,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time with internship"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "DE"
+                ]
             }
         ],
         "requirements": [
             "Business or hospitality background",
             "2 years work experience",
-            "Interview"
+            "Interview",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core business courses plus sustainability focus and field projects.",
         "feeBreakdown": [
             {
-                "price": 14500,
+                "amount": 14500,
                 "currency": "EUR",
                 "description": "Program Fee"
             },
             {
-                "price": 1000,
+                "amount": 1000,
                 "currency": "EUR",
                 "description": "Study Trips"
+            },
+            {
+                "amount": 500,
+                "currency": "EUR",
+                "description": "Case Materials Fee"
             }
         ],
         "additionalInfo": {
             "intake": "October 2024",
-            "location": "Vienna Campus"
+            "location": "Vienna Campus",
+            "applicationDeadline": "2024-06-30"
         }
     },
     {
@@ -878,35 +1095,50 @@
                 "value": "Master of Science"
             },
             {
-                "name": "Tuition",
-                "value": "CHF 730 per semester"
+                "name": "amount",
+                "value": 730,
+                "currency": "CHF"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "DE"
+                ]
             }
         ],
         "requirements": [
             "Computer science or environmental science",
             "Strong programming skills",
-            "Mathematics background"
+            "Mathematics background",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core data science plus environmental applications and capstone.",
         "feeBreakdown": [
             {
-                "price": 730,
+                "amount": 730,
                 "currency": "CHF",
                 "description": "Semester Fee"
             },
             {
-                "price": 300,
+                "amount": 300,
                 "currency": "CHF",
                 "description": "Computing Fees"
+            },
+            {
+                "amount": 150,
+                "currency": "CHF",
+                "description": "Data Access Fee"
             }
         ],
         "additionalInfo": {
             "intake": "September 2024",
-            "location": "Zentrum Campus"
+            "location": "Zentrum Campus",
+            "applicationDeadline": "2024-04-30"
         }
     },
     {
@@ -930,35 +1162,49 @@
                 "value": "Master of Science"
             },
             {
-                "name": "Tuition",
-                "value": "$45,000 total"
+                "name": "amount",
+                "value": 45000,
+                "currency": "USD"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Chemistry degree",
             "Research experience",
-            "Letters of recommendation"
+            "Letters of recommendation",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core chemistry courses plus green chemistry focus and research.",
         "feeBreakdown": [
             {
-                "price": 45000,
+                "amount": 45000,
                 "currency": "USD",
                 "description": "Program Fee"
             },
             {
-                "price": 2000,
+                "amount": 2000,
                 "currency": "USD",
                 "description": "Lab Fees"
+            },
+            {
+                "amount": 1000,
+                "currency": "USD",
+                "description": "Chemical Safety Fee"
             }
         ],
         "additionalInfo": {
             "intake": "August 2024",
-            "location": "New Haven Campus"
+            "location": "New Haven Campus",
+            "applicationDeadline": "2024-02-15"
         }
     },
     {
@@ -982,35 +1228,50 @@
                 "value": "Master of Architecture"
             },
             {
-                "name": "Tuition",
-                "value": "€258 per semester"
+                "name": "amount",
+                "value": 258,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "DE"
+                ]
             }
         ],
         "requirements": [
             "Architecture degree",
             "Portfolio review",
-            "German proficiency (B2)"
+            "German proficiency (B2)",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Design studios plus technical courses and thesis project.",
         "feeBreakdown": [
             {
-                "price": 258,
+                "amount": 258,
                 "currency": "EUR",
                 "description": "Semester Fee"
             },
             {
-                "price": 500,
+                "amount": 500,
                 "currency": "EUR",
                 "description": "Material Costs"
+            },
+            {
+                "amount": 150,
+                "currency": "EUR",
+                "description": "Studio Maintenance Fee"
             }
         ],
         "additionalInfo": {
             "intake": "October 2024",
-            "location": "Munich Campus"
+            "location": "Munich Campus",
+            "applicationDeadline": "2024-05-31"
         }
     },
     {
@@ -1034,35 +1295,50 @@
                 "value": "Master of Science"
             },
             {
-                "name": "Tuition",
-                "value": "€18,000 total"
+                "name": "amount",
+                "value": 18000,
+                "currency": "EUR"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN",
+                    "IT"
+                ]
             }
         ],
         "requirements": [
             "Business/economics background",
             "GMAT/GRE",
-            "Interview"
+            "Interview",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core business courses plus sustainability specialization.",
         "feeBreakdown": [
             {
-                "price": 18000,
+                "amount": 18000,
                 "currency": "EUR",
                 "description": "Program Fee"
             },
             {
-                "price": 1000,
+                "amount": 1000,
                 "currency": "EUR",
                 "description": "Case Study Materials"
+            },
+            {
+                "amount": 500,
+                "currency": "EUR",
+                "description": "Business Simulation Fee"
             }
         ],
         "additionalInfo": {
             "intake": "September 2024",
-            "location": "Milan Campus"
+            "location": "Milan Campus",
+            "applicationDeadline": "2024-04-30"
         }
     },
     {
@@ -1086,35 +1362,49 @@
                 "value": "Master of Engineering"
             },
             {
-                "name": "Tuition",
-                "value": "SGD 28,000 total"
+                "name": "amount",
+                "value": 28000,
+                "currency": "SGD"
             },
             {
                 "name": "Study Mode",
                 "value": "Full-time"
+            },
+            {
+                "name": "Language",
+                "value": [
+                    "EN"
+                ]
             }
         ],
         "requirements": [
             "Engineering degree",
             "Mathematics proficiency",
-            "Research proposal"
+            "Research proposal",
+            "Copy of a valid Identification Card or Passport"
         ],
         "structure": "Core engineering courses plus environmental focus and project.",
         "feeBreakdown": [
             {
-                "price": 28000,
+                "amount": 28000,
                 "currency": "SGD",
                 "description": "Program Fee"
             },
             {
-                "price": 1500,
+                "amount": 1500,
                 "currency": "SGD",
                 "description": "Lab Fees"
+            },
+            {
+                "amount": 500,
+                "currency": "SGD",
+                "description": "Technical Equipment Fee"
             }
         ],
         "additionalInfo": {
             "intake": "August 2024",
-            "location": "Kent Ridge Campus"
+            "location": "Kent Ridge Campus",
+            "applicationDeadline": "2024-03-31"
         }
     }
 ]
