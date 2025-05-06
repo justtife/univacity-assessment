@@ -1,48 +1,71 @@
 <ion-card class="featured-card">
+  <!-- Image section with main banner and university logo -->
   <div class="image-section">
-    <img [src]="imageUrl" alt="Banner" class="main-image" />
+    <img [src]="data.backImageUrl" alt="Banner" class="main-image" />
 
-    <!-- Top-right banner -->
+    <!-- Top-right partner label -->
     <div class="banner">
-      <ion-icon [name]="bannerIcon"></ion-icon>
-      <span>{{ bannerText }}</span>
+      <img src="assets/icon/checkmark.svg" alt="checkmark" />
+      <span>Official Partner</span>
     </div>
 
-    <!-- Bottom-left profile image -->
-    <img [src]="profileImage" alt="Profile" class="profile-image" />
+    <!-- Bottom-left university logo -->
+    <img
+      [src]="data.mainImageUrl"
+      alt="University Image"
+      class="university-image"
+    />
   </div>
 
   <ion-card-content>
-    <h2 class="card-title">{{ title }}</h2>
+    <!-- Title -->
+    <h2 class="card-title" (click)="programClick()">{{ data.title }}</h2>
 
+    <!-- University name -->
     <div class="info-line">
-      <ion-icon [name]="infoIcon"></ion-icon>
-      <span class="text-truncate">{{ university }}</span>
+      <img src="assets/icon/checkmark.svg" alt="checkmark" />
+      <span class="text-truncate">{{ data.university }}</span>
     </div>
 
+    <!-- Program info: country, degree, mode, duration -->
     <div class="options-row">
-      @for (opt of options; track opt.label){
       <div class="option">
-        <ion-icon [name]="opt.icon"></ion-icon>
-        <span>{{ opt.label }}</span>
+        <img [src]="'assets/images/' + flagDir + '_flag.png'" alt="Flag" />
+        <span>{{ data.country }}</span>
       </div>
-      }
+      <div class="option">
+        <ion-icon name="school-outline"></ion-icon>
+        <span>{{ data.programDetails.degree_level }}</span>
+      </div>
+      <div class="option">
+        <ion-icon name="time-outline"></ion-icon>
+        <span>{{ data.programDetails.study_mode }}</span>
+      </div>
+      <div class="option">
+        <ion-icon name="time-outline"></ion-icon>
+        <span>{{ data.programDetails.duration }}</span>
+      </div>
     </div>
 
+    <!-- Language -->
     <div class="info-line">
       <ion-icon name="language"></ion-icon>
-      <span>{{ language }} Language</span>
+      <span>{{ formattedLanguages }} Language</span>
     </div>
 
+    <!-- Bottom row: tuition + actions -->
     <div class="bottom-row">
       <div class="price">
-        {{ price | currency : currency : "symbol" }}/per semester
+        {{
+          data.programDetails.tuition
+            | currency : data.programDetails.currency : "symbol"
+        }}/per semester
       </div>
       <div class="actions">
-        <ion-button fill="clear" size="small">
+        <ion-button fill="clear">
           <ion-icon slot="icon-only" name="share-outline"></ion-icon>
         </ion-button>
-        <ion-button fill="clear" size="small">
+        <ion-button fill="clear">
           <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
         </ion-button>
       </div>
