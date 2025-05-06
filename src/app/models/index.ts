@@ -9,18 +9,20 @@ export interface Program {
     mainImageUrl: string;
     views: number;
     impressions: number;
-    programDetails: ProgramDetail[];
+    programDetails: ProgramDetails;
     requirements: string[];
     structure: string;
     feeBreakdown: FeeItem[];
     additionalInfo: AdditionalInfo;
 }
 
-
-export interface ProgramDetail {
-    name: string;
-    value: string;
-    currency?: string;
+export interface ProgramDetails {
+    duration: string;
+    degree_level: string;
+    currency: string;
+    tuition: number;
+    study_mode: string;
+    language: string[];
 }
 
 export interface FeeItem {
@@ -32,23 +34,5 @@ export interface FeeItem {
 export interface AdditionalInfo {
     intake: string;
     location: string;
-    applicationDeadline?: string;
+    applicationDeadline: string;
 }
-
-// export interface FilterOptions {
-//     countries: string[];
-//     disciplines: string[];
-//     degreeTypes: string[];
-//     tuitionRange: {
-//         min: number;
-//         max: number;
-//     };
-// }
-
-// export interface SearchParams {
-//     countries?: string[];
-//     disciplines?: string[];
-//     minTuition?: number;
-//     maxTuition?: number;
-//     searchTerm?: string;
-// }
