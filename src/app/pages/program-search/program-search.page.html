@@ -1,9 +1,11 @@
+<!--  Header Section  -->
 <ion-header>
   <ion-toolbar class="top-toolbar">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
 
+    <!-- Dropdown selection for study category -->
     <div class="dropdown-title">
       <ion-select
         class="custom-select"
@@ -12,9 +14,9 @@
         labelPlacement="floating"
         value="Computer Technologies"
       >
-        <ion-select-option value="Computer Technologies"
-          >Computer Technologies</ion-select-option
-        >
+        <ion-select-option value="Computer Technologies">
+          Computer Technologies
+        </ion-select-option>
         <ion-select-option value="Design">Design</ion-select-option>
         <ion-select-option value="Programming">Programming</ion-select-option>
       </ion-select>
@@ -22,23 +24,25 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- Fixed Action Toolbar -->
+<!--  Top Toolbar Buttons  -->
 <div class="action-toolbar">
   <div class="buttons-container">
+    <!-- Sort Button -->
     <ion-button fill="clear">
       <ion-icon slot="start" name="filter-outline"></ion-icon>
       <ion-label>Sort</ion-label>
     </ion-button>
 
+    <!-- Filter Button with badge count -->
     <ion-button fill="clear" (click)="showFilter()">
       <ion-icon slot="start" name="funnel-outline"></ion-icon>
       <ion-label>Filter</ion-label>
-      <ion-badge class="filter-badge" color="danger">3</ion-badge>
+      <ion-badge class="filter-badge">3</ion-badge>
     </ion-button>
   </div>
 </div>
 
-<!-- Fixed Filter Chips -->
+<!--  Active Filter Chips  -->
 <div class="chips-container">
   <div class="chips-scroller">
     @for (chip of activeFilters; track $index) {
@@ -50,18 +54,17 @@
   </div>
 </div>
 
-<!-- Fixed Search Result Text -->
-<div class="result-summary">Search Result</div>
+<!--  Result Heading  -->
+<div class="result-summary">Search result</div>
 
-<!-- Scrollable Content -->
-<ion-content [fullscreen]="true">
-  <div class="scrollable-card-area">
+<!--  Program Listing  -->
+<ion-content>
+  <div class="card-area">
     <div class="card-grid">
       @for (program of programs | async; track program.id){
       <app-program-card
-        (click)="programDetail(program.id,program.title)"
+        (click)="programDetail(program.id, program.title)"
         imageUrl="assets/images/background.png"
-        bannerIcon="ribbon"
         bannerText="Official Partner"
         profileImage="assets/images/logo.png"
         [title]="program.title"
