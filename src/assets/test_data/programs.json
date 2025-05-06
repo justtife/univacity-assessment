@@ -10,31 +10,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 191126,
         "impressions": 293612,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "2 Years"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Science"
-            },
-            {
-                "name": "amount",
-                "value": 726.72,
-                "currency": "USD"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "2 Years",
+            "degree_level": "Masters",
+            "currency": "USD",
+            "tuition": 726.72,
+            "study_mode": "Full-time",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Completed relevant degree program",
             "Copy of a valid Identification Card or Passport",
@@ -86,32 +71,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 145892,
         "impressions": 210456,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "4 Semesters"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Engineering"
-            },
-            {
-                "name": "amount",
-                "value": 363.36,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Part-time available"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "DE"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "4 Semesters",
+            "degree_level": "Master of Engineering",
+            "currency": "EUR",
+            "tuition": 363.36,
+            "study_mode": "Part-time available",
+            "language": [
+                "EN",
+                "DE"
+            ]
+        },
         "requirements": [
             "Relevant bachelor's degree",
             "Portfolio of relevant work",
@@ -153,32 +123,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 98723,
         "impressions": 156789,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "18 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Research"
-            },
-            {
-                "name": "amount",
-                "value": 2100,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time with fieldwork"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "ES"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "18 Months",
+            "degree_level": "Master of Research",
+            "currency": "EUR",
+            "tuition": 2100,
+            "study_mode": "Full-time with fieldwork",
+            "language": [
+                "EN",
+                "ES"
+            ]
+        },
         "requirements": [
             "Biology or environmental science background",
             "Research proposal",
@@ -220,31 +175,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 210345,
         "impressions": 345678,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "1 Year"
-            },
-            {
-                "name": "Degree Level",
-                "value": "MSc"
-            },
-            {
-                "name": "amount",
-                "value": 15000,
-                "currency": "GBP"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Intensive"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "1 Year",
+            "degree_level": "MSc",
+            "currency": "GBP",
+            "tuition": 15000,
+            "study_mode": "Intensive",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Engineering bachelor's degree",
             "2:1 or equivalent",
@@ -286,33 +226,18 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 87654,
         "impressions": 143256,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "2 Years"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Arts"
-            },
-            {
-                "name": "amount",
-                "value": 400,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "FR",
-                    "DE"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "2 Years",
+            "degree_level": "Master of Arts",
+            "currency": "EUR",
+            "tuition": 400,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "FR",
+                "DE"
+            ]
+        },
         "requirements": [
             "Social sciences background",
             "Policy analysis sample",
@@ -354,31 +279,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 65432,
         "impressions": 98765,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "12 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "MSc"
-            },
-            {
-                "name": "amount",
-                "value": 18500,
-                "currency": "GBP"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "12 Months",
+            "degree_level": "MSc",
+            "currency": "GBP",
+            "tuition": 18500,
+            "study_mode": "Full-time",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Social science or development background",
             "2 years relevant experience",
@@ -420,32 +330,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 112345,
         "impressions": 187654,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "24 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Science"
-            },
-            {
-                "name": "amount",
-                "value": 2168,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "NL"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "24 Months",
+            "degree_level": "Master of Science",
+            "currency": "EUR",
+            "tuition": 2168,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "NL"
+            ]
+        },
         "requirements": [
             "BSc in agriculture or related field",
             "Mathematics proficiency",
@@ -487,31 +382,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 156789,
         "impressions": 245678,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "10 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "MSc"
-            },
-            {
-                "name": "amount",
-                "value": 28000,
-                "currency": "GBP"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Intensive"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "10 Months",
+            "degree_level": "MSc",
+            "currency": "GBP",
+            "tuition": 28000,
+            "study_mode": "Intensive",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Economics degree",
             "Strong quantitative background",
@@ -553,32 +433,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 98765,
         "impressions": 165432,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "3 Semesters"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Engineering"
-            },
-            {
-                "name": "amount",
-                "value": 730,
-                "currency": "CHF"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "DE"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "3 Semesters",
+            "degree_level": "Master of Engineering",
+            "currency": "CHF",
+            "tuition": 730,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "DE"
+            ]
+        },
         "requirements": [
             "Civil/environmental engineering background",
             "Hydrology coursework",
@@ -620,31 +485,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 87654,
         "impressions": 143256,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "16 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Environmental Management"
-            },
-            {
-                "name": "amount",
-                "value": 12000,
-                "currency": "CAD"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time with co-op"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "16 Months",
+            "degree_level": "Master of Environmental Management",
+            "currency": "CAD",
+            "tuition": 12000,
+            "study_mode": "Full-time with co-op",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Relevant undergraduate degree",
             "Professional experience preferred",
@@ -686,31 +536,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 76543,
         "impressions": 132456,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "9 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "LLM"
-            },
-            {
-                "name": "amount",
-                "value": 65000,
-                "currency": "USD"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "9 Months",
+            "degree_level": "LLM",
+            "currency": "USD",
+            "tuition": 65000,
+            "study_mode": "Full-time",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Law degree (JD or equivalent)",
             "Personal statement",
@@ -752,31 +587,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 65432,
         "impressions": 109876,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "2 Years"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Science"
-            },
-            {
-                "name": "amount",
-                "value": 36000,
-                "currency": "AUD"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Research-focused"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "2 Years",
+            "degree_level": "Master of Science",
+            "currency": "AUD",
+            "tuition": 36000,
+            "study_mode": "Research-focused",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Biology or ecology background",
             "Research experience",
@@ -818,32 +638,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 87654,
         "impressions": 154321,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "2 Years"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Science"
-            },
-            {
-                "name": "amount",
-                "value": 145000,
-                "currency": "SEK"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "SV"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "2 Years",
+            "degree_level": "Master of Science",
+            "currency": "SEK",
+            "tuition": 145000,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "SV"
+            ]
+        },
         "requirements": [
             "Engineering or physics background",
             "Calculus and thermodynamics",
@@ -885,31 +690,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 76543,
         "impressions": 132456,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "11 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "MPH"
-            },
-            {
-                "name": "amount",
-                "value": 58000,
-                "currency": "USD"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Intensive"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "11 Months",
+            "degree_level": "MPH",
+            "currency": "USD",
+            "tuition": 58000,
+            "study_mode": "Intensive",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Science or health background",
             "Statistics coursework",
@@ -951,32 +741,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 65432,
         "impressions": 109876,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "2 Years"
-            },
-            {
-                "name": "Degree Level",
-                "value": "MSc"
-            },
-            {
-                "name": "amount",
-                "value": 2209,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "NL"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "2 Years",
+            "degree_level": "MSc",
+            "currency": "EUR",
+            "tuition": 2209,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "NL"
+            ]
+        },
         "requirements": [
             "Engineering or science background",
             "Materials science coursework",
@@ -1018,32 +793,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 54321,
         "impressions": 98765,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "18 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Business Administration"
-            },
-            {
-                "name": "amount",
-                "value": 14500,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time with internship"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "DE"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "18 Months",
+            "degree_level": "Master of Business Administration",
+            "currency": "EUR",
+            "tuition": 14500,
+            "study_mode": "Full-time with internship",
+            "language": [
+                "EN",
+                "DE"
+            ]
+        },
         "requirements": [
             "Business or hospitality background",
             "2 years work experience",
@@ -1085,32 +845,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 87654,
         "impressions": 154321,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "3 Semesters"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Science"
-            },
-            {
-                "name": "amount",
-                "value": 730,
-                "currency": "CHF"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "DE"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "3 Semesters",
+            "degree_level": "Master of Science",
+            "currency": "CHF",
+            "tuition": 730,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "DE"
+            ]
+        },
         "requirements": [
             "Computer science or environmental science",
             "Strong programming skills",
@@ -1152,31 +897,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 65432,
         "impressions": 109876,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "1 Year"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Science"
-            },
-            {
-                "name": "amount",
-                "value": 45000,
-                "currency": "USD"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "1 Year",
+            "degree_level": "Master of Science",
+            "currency": "USD",
+            "tuition": 45000,
+            "study_mode": "Full-time",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Chemistry degree",
             "Research experience",
@@ -1218,32 +948,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 76543,
         "impressions": 132456,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "4 Semesters"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Architecture"
-            },
-            {
-                "name": "amount",
-                "value": 258,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "DE"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "4 Semesters",
+            "degree_level": "Master of Architecture",
+            "currency": "EUR",
+            "tuition": 258,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "DE"
+            ]
+        },
         "requirements": [
             "Architecture degree",
             "Portfolio review",
@@ -1285,32 +1000,17 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 87654,
         "impressions": 154321,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "12 Months"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Science"
-            },
-            {
-                "name": "amount",
-                "value": 18000,
-                "currency": "EUR"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN",
-                    "IT"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "12 Months",
+            "degree_level": "Master of Science",
+            "currency": "EUR",
+            "tuition": 18000,
+            "study_mode": "Full-time",
+            "language": [
+                "EN",
+                "IT"
+            ]
+        },
         "requirements": [
             "Business/economics background",
             "GMAT/GRE",
@@ -1352,31 +1052,16 @@
         "mainImageUrl": "assets/images/logo.png",
         "views": 98765,
         "impressions": 165432,
-        "programDetails": [
-            {
-                "name": "Duration",
-                "value": "1.5 Years"
-            },
-            {
-                "name": "Degree Level",
-                "value": "Master of Engineering"
-            },
-            {
-                "name": "amount",
-                "value": 28000,
-                "currency": "SGD"
-            },
-            {
-                "name": "Study Mode",
-                "value": "Full-time"
-            },
-            {
-                "name": "Language",
-                "value": [
-                    "EN"
-                ]
-            }
-        ],
+        "programDetails": {
+            "duration": "1.5 Years",
+            "degree_level": "Master of Engineering",
+            "currency": "SGD",
+            "tuition": 28000,
+            "study_mode": "Full-time",
+            "language": [
+                "EN"
+            ]
+        },
         "requirements": [
             "Engineering degree",
             "Mathematics proficiency",
