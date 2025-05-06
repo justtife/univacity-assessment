@@ -1,3 +1,51 @@
-<p>
-  program-card works!
-</p>
+<ion-card class="featured-card">
+  <div class="image-section">
+    <img [src]="imageUrl" alt="Banner" class="main-image" />
+
+    <!-- Top-right banner -->
+    <div class="banner">
+      <ion-icon [name]="bannerIcon"></ion-icon>
+      <span>{{ bannerText }}</span>
+    </div>
+
+    <!-- Bottom-left profile image -->
+    <img [src]="profileImage" alt="Profile" class="profile-image" />
+  </div>
+
+  <ion-card-content>
+    <h2 class="card-title">{{ title }}</h2>
+
+    <div class="info-line">
+      <ion-icon [name]="infoIcon"></ion-icon>
+      <span class="text-truncate">{{ university }}</span>
+    </div>
+
+    <div class="options-row">
+      @for (opt of options; track opt.label){
+      <div class="option">
+        <ion-icon [name]="opt.icon"></ion-icon>
+        <span>{{ opt.label }}</span>
+      </div>
+      }
+    </div>
+
+    <div class="info-line">
+      <ion-icon name="language"></ion-icon>
+      <span>{{ language }} Language</span>
+    </div>
+
+    <div class="bottom-row">
+      <div class="price">
+        {{ price | currency : currency : "symbol" }}/per semester
+      </div>
+      <div class="actions">
+        <ion-button fill="clear" size="small">
+          <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" size="small">
+          <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>

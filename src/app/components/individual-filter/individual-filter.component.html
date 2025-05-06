@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="closeFilter()">
+      <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Institutes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-searchbar
+    placeholder="Search institutes"
+    [(ngModel)]="searchTerm"
+  ></ion-searchbar>
+
+  <ion-radio-group [(ngModel)]="selectedInstitute">
+    <ion-list>
+      <ion-item *ngFor="let institute of filteredInstitutes()">
+        <ion-avatar slot="start">
+          <img [src]="institute.logo" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ institute.name }}</h2>
+          <p>
+            <img src="assets/flags/canada.svg" alt="Flag" class="flag-icon" />
+            {{ institute.country }}
+          </p>
+        </ion-label>
+        <ion-badge slot="end" color="primary">{{ institute.count }}</ion-badge>
+        <ion-radio slot="end" [value]="institute.name"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-radio-group>
+</ion-content>
+<ion-footer class="footer">
+  <div class="footer-buttons">
+    <app-custom-button
+      buttonText="Clear All"
+      color="secondary"
+    ></app-custom-button>
+    <app-custom-button buttonText="Apply Filter"></app-custom-button>
+  </div>
+</ion-footer>

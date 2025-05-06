@@ -1,13 +1,152 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>program-detail</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="course-detail-page">
+  <div class="header-image">
+    <ion-back-button
+      defaultHref="/"
+      class="back-btn"
+      slot="start"
+    ></ion-back-button>
+    <div class="action-buttons">
+      <ion-button shape="round">
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+      <ion-button shape="round">
+        <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <img [src]="course.backImageUrl" alt="Course Background" />
+    <img [src]="course.mainImageUrl" alt="Course Image" class="main-image" />
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">program-detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="course-info">
+    <h4 class="course-title">{{ course.title }}</h4>
+    <div class="meta-row location">
+      <div class="meta-info">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <span>{{ course.university }}</span>
+      </div>
+      <div class="meta-info">
+        <ion-icon name="trending-up-outline"></ion-icon>
+        <span>{{ course.country }}</span>
+      </div>
+    </div>
+    <p>{{ course.shortDesc }}</p>
+    <div class="meta-row stats">
+      <div class="meta-info">
+        <ion-icon name="eye-outline"></ion-icon>
+        <span>{{ course.views }} Views</span>
+      </div>
+      <div class="meta-info">
+        <ion-icon name="trending-up-outline"></ion-icon>
+        <span>{{ course.impressions }} Impressions</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">Program Breakdown</h3>
+    <div class="breakdown-grid">
+      @for (item of course.programBreakdown; track item.title){
+      <div class="breakdown-item">
+        <ion-icon name="sparkles"></ion-icon>
+        <div>
+          <div class="main-text">{{ item.title }}</div>
+          <div class="sub-text">{{ item.subtitle}}</div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">Description</h3>
+    <p [class.collapsed]="!showFullDescription">{{ course.description }}</p>
+    <app-custom-button
+      [toggle]="true"
+      (onClick)="toggleDescription()"
+      color="secondary"
+      [buttonText]="['Read More','Read Less']"
+      [buttonIcon]="['chevron-down-outline','chevron-up-outline']"
+    ></app-custom-button>
+  </div>
+  <!-- Requirements Section -->
+  <div class="section">
+    <h3 class="section-title">Requirement</h3>
+    <ion-list class="requirement-list">
+      @for (requirement of course.requirements; track $index){
+      <ion-item [lines]="$last ? 'none' : 'full'">
+        <ion-icon name="checkmark-done"></ion-icon>
+        <ion-label>{{requirement}}</ion-label>
+      </ion-item>
+      }
+    </ion-list>
+    <app-custom-button
+      [toggle]="true"
+      color="secondary"
+      [buttonText]="['Read More','Read Less']"
+      [buttonIcon]="['chevron-down-outline','chevron-up-outline']"
+    ></app-custom-button>
+  </div>
+
+  <!-- Structure Section -->
+  <div class="section">
+    <h3 class="section-title">Structure</h3>
+    <p>{{course.structure}}</p>
+    <app-custom-button
+      [toggle]="true"
+      color="secondary"
+      [buttonText]="['Read More','Read Less']"
+      [buttonIcon]="['chevron-down-outline','chevron-up-outline']"
+    ></app-custom-button>
+  </div>
+
+  <!-- Fees Section -->
+  <div class="section">
+    <h3 class="section-title">Fees</h3>
+    <p>
+      Service fee is €50.<br />
+      For international degree students, the tuition fee is €726,72
+    </p>
+    <div class="breakdown-grid">
+      @for(fee of course.feeBreakdown; track fee.title){
+      <div class="breakdown-item">
+        <ion-icon name="sparkles"></ion-icon>
+        <div>
+          <div class="main-text">
+            {{ fee.price | currency : fee.currency : "symbol" }}
+          </div>
+          <div class="sub-text">{{fee.title}}</div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- Extra Information -->
+  <div class="section">
+    <h3 class="section-title">Extra Information</h3>
+    <ion-list class="requirement-list">
+      @for (info of course.extra_info; track $index){
+      <ion-item class="extra-info-list" [lines]="$last ? 'none' : 'full'">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <div>
+          <ion-label>{{info}}</ion-label>
+          <span>Hello</span>
+        </div> </ion-item
+      >}
+    </ion-list>
+  </div>
 </ion-content>
+<ion-footer class="footer">
+  <div class="footer-buttons">
+    <app-custom-button
+      buttonText="Back"
+      color="secondary"
+      buttonIcon="chevron-back"
+      position="start"
+    ></app-custom-button>
+    <app-custom-button
+      buttonText="Apply now"
+      buttonIcon="chevron-forward"
+    ></app-custom-button>
+  </div>
+</ion-footer>

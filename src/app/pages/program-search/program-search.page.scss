@@ -1,0 +1,161 @@
+/* =======================
+   Toolbar & Header Styles
+========================== */
+ion-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: none;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --padding-top: 0.5rem;
+  --padding-bottom: 0.5rem;
+  box-shadow: none !important;
+
+  .dropdown-title {
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 768px;
+    display: block;
+    margin: 0 auto;
+    color: var(--ion-color-dark);
+    padding-bottom: 0.5rem;
+  }
+
+  .custom-select {
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 10px;
+    padding: 0 0.5rem;
+
+    ::part(native) {
+      padding: 0.5rem;
+      border-radius: 8px;
+      background: white;
+    }
+  }
+}
+
+/* =====================
+   Action Toolbar Styles
+======================== */
+.action-toolbar {
+  position: sticky;
+  top: 56px; // height of header
+  z-index: 99;
+  background: white;
+  border-bottom: 1px solid #d1d1d1;
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  ion-button {
+    --color: var(--ion-color-medium);
+    --padding-start: 0.75rem;
+    --padding-end: 0.75rem;
+    margin: 0;
+    font-size: 0.875rem;
+
+    ion-icon {
+      font-size: 1rem;
+      margin-right: 0.375rem;
+    }
+  }
+
+  .filter-badge {
+    margin-left: 0.375rem;
+    font-size: 0.6875rem;
+  }
+}
+
+/* =====================
+   Chips Container Styles
+======================== */
+.chips-container {
+  position: sticky;
+  top: 104px; // header + toolbar
+  z-index: 98;
+  background: white;
+  padding: 0.5rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chips-scroller {
+    display: inline-flex;
+    padding: 0 1rem;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .active-chip {
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-dark);
+    margin: 0 0.375rem;
+    font-size: 0.8125rem;
+    height: 1.75rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: 0.875rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+
+    ion-icon {
+      color: var(--ion-color-medium);
+      font-size: 0.9375rem;
+      margin-left: 0.25rem;
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+}
+
+/* =====================
+   Result Title (Fixed)
+======================== */
+.result-summary {
+  position: sticky;
+  top: 144px;
+  z-index: 97;
+  background: white;
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+/* =====================
+   Scrollable Card Area
+======================== */
+ion-content {
+  // --background: white;
+
+  .scrollable-card-area {
+    padding: 1rem;
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(5, 1fr); // 5 columns on large screens
+    }
+  }
+}

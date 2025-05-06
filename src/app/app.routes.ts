@@ -9,7 +9,7 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/program-search/program-search.page').then(m => m.ProgramSearchPage)
       },
       {
-        path: 'detail',
+        path: 'detail/:id/:name',
         loadComponent: () => import('./pages/program-detail/program-detail.page').then(m => m.ProgramDetailPage)
       },
     ]

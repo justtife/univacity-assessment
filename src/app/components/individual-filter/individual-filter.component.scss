@@ -1,0 +1,21 @@
+ion-header {
+  box-shadow: none;
+}
+.flag-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+ion-label h2 {
+  margin: 0;
+  font-weight: 500;
+  p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+  }
+}

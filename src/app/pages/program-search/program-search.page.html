@@ -1,13 +1,83 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>program-search</ion-title>
+<ion-header>
+  <ion-toolbar class="top-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <div class="dropdown-title">
+      <ion-select
+        class="custom-select"
+        interface="popover"
+        label="What do you want to study?"
+        labelPlacement="floating"
+        value="Computer Technologies"
+      >
+        <ion-select-option value="Computer Technologies"
+          >Computer Technologies</ion-select-option
+        >
+        <ion-select-option value="Design">Design</ion-select-option>
+        <ion-select-option value="Programming">Programming</ion-select-option>
+      </ion-select>
+    </div>
   </ion-toolbar>
 </ion-header>
 
+<!-- Fixed Action Toolbar -->
+<div class="action-toolbar">
+  <div class="buttons-container">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="filter-outline"></ion-icon>
+      <ion-label>Sort</ion-label>
+    </ion-button>
+
+    <ion-button fill="clear" (click)="showFilter()">
+      <ion-icon slot="start" name="funnel-outline"></ion-icon>
+      <ion-label>Filter</ion-label>
+      <ion-badge class="filter-badge" color="danger">3</ion-badge>
+    </ion-button>
+  </div>
+</div>
+
+<!-- Fixed Filter Chips -->
+<div class="chips-container">
+  <div class="chips-scroller">
+    @for (chip of activeFilters; track $index) {
+    <ion-chip class="active-chip" (click)="removeFilter(chip)">
+      <ion-label>{{ chip }}</ion-label>
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-chip>
+    }
+  </div>
+</div>
+
+<!-- Fixed Search Result Text -->
+<div class="result-summary">Search Result</div>
+
+<!-- Scrollable Content -->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">program-search</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="scrollable-card-area">
+    <div class="card-grid">
+      @for (program of programs | async; track program.id){
+      <app-program-card
+        (click)="programDetail(program.id,program.title)"
+        imageUrl="assets/images/background.png"
+        bannerIcon="ribbon"
+        bannerText="Official Partner"
+        profileImage="assets/images/logo.png"
+        [title]="program.title"
+        infoIcon="school"
+        [university]="program.university"
+        [options]="[
+            { icon: 'calendar', label: 'Canada' },
+            { icon: 'location', label: 'Masters' },
+            { icon: 'time', label: 'Fulltime' },
+            { icon: 'time', label: '2 years' }
+          ]"
+        language="English"
+        price="363.36"
+        currency="EUR"
+      ></app-program-card>
+      }
+    </div>
+  </div>
 </ion-content>
