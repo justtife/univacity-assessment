@@ -3,7 +3,7 @@
     <ion-buttons slot="start" (click)="closeFilter()">
       <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
     </ion-buttons>
-    <ion-title>Institutes</ion-title>
+    <ion-title>{{ type }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,20 +15,27 @@
 
   <ion-radio-group [(ngModel)]="selectedInstitute">
     <ion-list>
-      <ion-item *ngFor="let institute of filteredInstitutes()">
+      @for (data of filteredItems; track $index){
+      <ion-item>
         <ion-avatar slot="start">
-          <img [src]="institute.logo" />
+          <img src="assets/images/logo.png" />
         </ion-avatar>
         <ion-label>
-          <h2>{{ institute.name }}</h2>
+          <h2>{{ data.main }}</h2>
+          @if(data.additional){
           <p>
-            <img src="assets/flags/canada.svg" alt="Flag" class="flag-icon" />
-            {{ institute.country }}
+            <img
+              src="assets/images/USA_flag.png"
+              alt="Flag"
+              class="flag-icon"
+            />
+            {{ data.additional }}
           </p>
+          }
         </ion-label>
-        <ion-badge slot="end" color="primary">{{ institute.count }}</ion-badge>
-        <ion-radio slot="end" [value]="institute.name"></ion-radio>
-      </ion-item>
+        <!-- <ion-badge slot="end" color="primary">{{ institute.count }}</ion-badge> -->
+        <ion-radio slot="end" [value]="data.main"></ion-radio> </ion-item
+      >}
     </ion-list>
   </ion-radio-group>
 </ion-content>

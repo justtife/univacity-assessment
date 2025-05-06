@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Program } from "../../models";
+import { Program, OutputFormat } from "../../models";
 
 export namespace ProgramActions {
     export const getAllPrograms = createAction('[Program] Load all Programs');
@@ -7,10 +7,10 @@ export namespace ProgramActions {
         '[Program] Load All Programs Success',
         props<{
             programs: Program[];
-            universities: string[];
-            countries: string[];
-            degrees: string[];
-            languages: string[];
+            universities: OutputFormat[];
+            countries: OutputFormat[];
+            degrees: OutputFormat[];
+            languages: OutputFormat[];
             views: number;
         }>()
     );

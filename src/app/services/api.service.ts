@@ -33,15 +33,33 @@ export class ApiService {
     );
   }
 
-  // Get all unique universities
-  getAllUniversities(): Observable<string[]> {
+  // Get all universities with their associated countries
+  getAllUniversitiesWithCountries(): Observable<{ main: string; additional: string }[]> {
     return this.getAllPrograms().pipe(
-      map(programs => Array.from(new Set(programs.map(p => p.university))))
+      map(programs => {
+        const universityMap = new Map<string, string>();
+        programs.forEach(program => {
+          if (program.university && program.country) {
+            universityMap.set(program.university, program.country);
+          }
+        });
+
+        // Convert Map to array of objects with 'main' and 'additional' keys
+        return Array.from(universityMap.entries()).map(([university, country]) => ({
+          main: university,
+          additional: country
+        }));
+      }),
+      catchError(error => {
+        console.error('Error getting universities with countries:', error);
+        return of([]);
+      })
     );
   }
 
+
   // Get all unique degree levels (no flatMap)
-  getAllDegreeLevels(): Observable<string[]> {
+  getAllDegreeLevels(): Observable<{ main: string }[]> {
     return this.getAllPrograms().pipe(
       map(programs => {
         const allLevels: string[] = [];
@@ -50,7 +68,10 @@ export class ApiService {
             allLevels.push(program.programDetails.degree_level);
           }
         });
-        return Array.from(new Set(allLevels)).sort(); // Remove duplicates and sort
+
+        const uniqueSortedLevels = Array.from(new Set(allLevels)).sort();
+
+        return uniqueSortedLevels.map(level => ({ main: level }));
       }),
       catchError(error => {
         console.error('Error getting degree levels:', error);
@@ -59,15 +80,23 @@ export class ApiService {
     );
   }
 
+
   // Get all unique countries
-  getAllCountries(): Observable<string[]> {
+  getAllCountries(): Observable<{ main: string }[]> {
     return this.getAllPrograms().pipe(
-      map(programs => Array.from(new Set(programs.map(p => p.country))))
+      map(programs => {
+        const uniqueCountries = Array.from(new Set(programs.map(p => p.country)));
+        return uniqueCountries.map(country => ({ main: country }));
+      }),
+      catchError(error => {
+        console.error('Error getting countries:', error);
+        return of([]);
+      })
     );
   }
 
   // Get all unique languages (no flatMap)
-  getAllLanguages(): Observable<string[]> {
+  getAllLanguages(): Observable<{ main: string }[]> {
     return this.getAllPrograms().pipe(
       map(programs => {
         const languages: string[] = [];
@@ -76,7 +105,8 @@ export class ApiService {
             languages.push(...program.programDetails.language);
           }
         });
-        return Array.from(new Set(languages)).sort(); // Remove duplicates and sort
+        const uniqueSortedLanguages = Array.from(new Set(languages)).sort();
+        return uniqueSortedLanguages.map(language => ({ main: language }));
       }),
       catchError(error => {
         console.error('Error getting languages:', error);

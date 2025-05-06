@@ -16,7 +16,7 @@ export class ProgramEffects {
             switchMap(() =>
                 this.apiS.getAllPrograms().pipe(
                     mergeMap(programs =>
-                        this.apiS.getAllUniversities().pipe(
+                        this.apiS.getAllUniversitiesWithCountries().pipe(
                             map(universities => ({ programs, universities }))
                         )
                     ),

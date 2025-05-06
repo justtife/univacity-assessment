@@ -45,15 +45,41 @@
   <div class="section">
     <h3 class="section-title">Program Breakdown</h3>
     <div class="breakdown-grid">
-      @for (item of course.programBreakdown; track item.title){
       <div class="breakdown-item">
         <ion-icon name="sparkles"></ion-icon>
         <div>
-          <div class="main-text">{{ item.title }}</div>
-          <div class="sub-text">{{ item.subtitle}}</div>
+          <div class="main-text">{{ course.programDetails.duration }}</div>
+          <div class="sub-text">Duration</div>
         </div>
       </div>
-      }
+      <div class="breakdown-item">
+        <ion-icon name="sparkles"></ion-icon>
+        <div>
+          <div class="main-text">{{ course.programDetails.degree_level }}</div>
+          <div class="sub-text">Level</div>
+        </div>
+      </div>
+      <div class="breakdown-item">
+        <ion-icon name="sparkles"></ion-icon>
+        <div>
+          <div class="main-text">{{ course.programDetails.tuition }}</div>
+          <div class="sub-text">Tuition Fee</div>
+        </div>
+      </div>
+      <div class="breakdown-item">
+        <ion-icon name="sparkles"></ion-icon>
+        <div>
+          <div class="main-text">{{ course.views }}</div>
+          <div class="sub-text">Attendance</div>
+        </div>
+      </div>
+      <div class="breakdown-item">
+        <ion-icon name="sparkles"></ion-icon>
+        <div>
+          <div class="main-text">{{ course.programDetails.study_mode }}</div>
+          <div class="sub-text">Study Mode</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -112,9 +138,9 @@
         <ion-icon name="sparkles"></ion-icon>
         <div>
           <div class="main-text">
-            {{ fee.price | currency : fee.currency : "symbol" }}
+            {{ fee.amount | currency : fee.currency : "symbol" }}
           </div>
-          <div class="sub-text">{{fee.title}}</div>
+          <div class="sub-text">{{fee.description}}</div>
         </div>
       </div>
       }
@@ -125,14 +151,27 @@
   <div class="section">
     <h3 class="section-title">Extra Information</h3>
     <ion-list class="requirement-list">
-      @for (info of course.extra_info; track $index){
-      <ion-item class="extra-info-list" [lines]="$last ? 'none' : 'full'">
+      <ion-item class="extra-info-list" lines="full">
         <ion-icon name="information-circle-outline"></ion-icon>
         <div>
-          <ion-label>{{info}}</ion-label>
-          <span>Hello</span>
-        </div> </ion-item
-      >}
+          <ion-label>{{course.additionalInfo.location}}</ion-label>
+          <span>Campuse(s)</span>
+        </div>
+      </ion-item>
+      <ion-item class="extra-info-list" lines="full">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <div>
+          <ion-label>{{course.additionalInfo.intake}}</ion-label>
+          <span>Intakes</span>
+        </div>
+      </ion-item>
+      <ion-item class="extra-info-list" lines="none">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <div>
+          <ion-label>{{course.programDetails.language}}</ion-label>
+          <span>Study Language</span>
+        </div>
+      </ion-item>
     </ion-list>
   </div>
 </ion-content>

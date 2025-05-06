@@ -1,12 +1,12 @@
-import { Program } from "../../models";
+import { OutputFormat, Program } from "../../models";
 
 export namespace ProgramState {
     export interface PState {
         programs: Program[];
-        universities: string[];
-        countries: string[];
-        degrees: string[];
-        languages: string[];
+        universities: OutputFormat[];
+        countries: OutputFormat[];
+        degrees: OutputFormat[];
+        languages: OutputFormat[];
         views: number;
         loading: boolean;
         error: string | null;

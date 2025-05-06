@@ -36,3 +36,7 @@ export interface AdditionalInfo {
     location: string;
     applicationDeadline: string;
 }
+export interface OutputFormat {
+    main: string;
+    additional?: string;
+}
