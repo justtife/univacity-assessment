@@ -45,14 +45,16 @@ export class ApiService {
     return this.getAllPrograms().pipe(
       map(programs => {
         const allLevels: string[] = [];
-        for (const p of programs) {
-          for (const detail of p.programDetails || []) {
-            if (detail.name === 'Degree Level' && detail.value) {
-              allLevels.push(String(detail.value));
-            }
+        programs.forEach(program => {
+          if (program.programDetails?.degree_level) {
+            allLevels.push(program.programDetails.degree_level);
           }
-        }
-        return Array.from(new Set(allLevels));
+        });
+        return Array.from(new Set(allLevels)).sort(); // Remove duplicates and sort
+      }),
+      catchError(error => {
+        console.error('Error getting degree levels:', error);
+        return of([]);
       })
     );
   }
@@ -69,19 +71,12 @@ export class ApiService {
     return this.getAllPrograms().pipe(
       map(programs => {
         const languages: string[] = [];
-        for (const p of programs) {
-          for (const detail of p.programDetails || []) {
-            if (detail.name === 'Language') {
-              const value = detail.value;
-              if (Array.isArray(value)) {
-                languages.push(...value.map(String));
-              } else if (value) {
-                languages.push(String(value));
-              }
-            }
+        programs.forEach(program => {
+          if (program.programDetails?.language) {
+            languages.push(...program.programDetails.language);
           }
-        }
-        return Array.from(new Set(languages));
+        });
+        return Array.from(new Set(languages)).sort(); // Remove duplicates and sort
       }),
       catchError(error => {
         console.error('Error getting languages:', error);
