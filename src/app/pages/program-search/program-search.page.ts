@@ -8,6 +8,7 @@ import { ProgramActions } from 'src/app/@ngrx/actions/program.action';
 import { Observable } from 'rxjs';
 import { ProgramSelector } from "../../@ngrx/selectors/program.selector"
 import { Router } from '@angular/router';
+import { Program } from 'src/app/models';
 @Component({
   selector: 'app-program-search',
   templateUrl: './program-search.page.html',
@@ -37,13 +38,13 @@ export class ProgramSearchPage {
   removeFilter(filter: string) {
     this.activeFilters = this.activeFilters.filter(f => f !== filter);
   }
-  programDetail(id: string, title: string) {
-    const course = title.toLowerCase()
+  programDetail(programDetail: Program) {
+    const course = programDetail.title.toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[^\w-]+/g, '')
       .replace(/--+/g, '-')
       .replace(/-$/, '')
       .replace(/^-/, '')
-    this.router.navigate(['/programs/detail', id, course])
+    this.router.navigate(['/programs/detail', programDetail.id, course])
   }
 }

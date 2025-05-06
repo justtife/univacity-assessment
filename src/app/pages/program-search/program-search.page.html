@@ -63,22 +63,8 @@
     <div class="card-grid">
       @for (program of programs | async; track program.id){
       <app-program-card
-        (click)="programDetail(program.id, program.title)"
-        imageUrl="assets/images/background.png"
-        bannerText="Official Partner"
-        profileImage="assets/images/logo.png"
-        [title]="program.title"
-        infoIcon="school"
-        [university]="program.university"
-        [options]="[
-            { icon: 'calendar', label: 'Canada' },
-            { icon: 'location', label: 'Masters' },
-            { icon: 'time', label: 'Fulltime' },
-            { icon: 'time', label: '2 years' }
-          ]"
-        language="English"
-        price="363.36"
-        currency="EUR"
+        (onProgramClick)="programDetail($event)"
+        [data]="program"
       ></app-program-card>
       }
     </div>
