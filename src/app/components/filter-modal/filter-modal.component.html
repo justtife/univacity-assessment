@@ -1,3 +1,102 @@
-<p>
-  filter-modal works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="closeFilter()">
+      <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding filter-modal">
+  <!-- Tuition Fee -->
+  <section class="filter-section">
+    <h3 class="section-label">Tuition Fee</h3>
+
+    <div class="range-inputs">
+      <ion-input
+        label="Min"
+        type="text"
+        [value]="'$' + tuitionRange.lower.toLocaleString()"
+        readonly
+        class="range-box"
+      ></ion-input>
+
+      <ion-input
+        label="Max"
+        type="text"
+        [value]="'$' + tuitionRange.upper.toLocaleString()"
+        readonly
+        class="range-box"
+      ></ion-input>
+    </div>
+
+    <ion-range
+      dual-knobs="true"
+      min="0"
+      max="170000"
+      step="1000"
+      [(ngModel)]="tuitionRange"
+      pin="true"
+      [pinFormatter]="formatPinValue"
+      class="tuition-slider"
+    ></ion-range>
+  </section>
+
+  <!-- Filter Options -->
+  <section class="filter-section">
+    <ion-item button detail lines="full" (click)="openIndividualFilter()">
+      <ion-label class="label-stack">
+        <div class="label-title">Institutes</div>
+        <div class="label-subtitle">None selected</div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail lines="full" (click)="openIndividualFilter()">
+      <ion-label class="label-stack">
+        <div class="label-title">Education Level</div>
+        <div class="label-subtitle">None selected</div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail lines="full" (click)="openIndividualFilter()">
+      <ion-label class="label-stack">
+        <div class="label-title">Country</div>
+        <div class="label-subtitle">None selected</div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail lines="full" (click)="openIndividualFilter()">
+      <ion-label class="label-stack">
+        <div class="label-title">Discipline</div>
+        <div class="label-subtitle">None selected</div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail lines="full" (click)="openIndividualFilter()">
+      <ion-label class="label-stack">
+        <div class="label-title">Study Language</div>
+        <div class="label-subtitle">None selected</div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail lines="none" (click)="openIndividualFilter()">
+      <ion-label class="label-stack">
+        <div class="label-title">Attendance</div>
+        <div class="label-subtitle">None selected</div>
+      </ion-label>
+    </ion-item>
+  </section>
+</ion-content>
+
+<ion-footer class="footer">
+  <div class="footer-buttons">
+    <app-custom-button
+      buttonText="Clear All"
+      color="secondary"
+    ></app-custom-button>
+    <app-custom-button
+      [buttonText]="'View ' + data + ' Results'"
+      buttonIcon="chevron-forward"
+    ></app-custom-button>
+  </div>
+</ion-footer>

@@ -1,0 +1,70 @@
+ion-header {
+  box-shadow: none;
+}
+
+.filter-modal {
+  .section-label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .range-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .range-box {
+      flex: 1;
+      border: 1px solid var(--ion-color-light);
+      border-radius: 10px;
+      padding: 0.5rem;
+      --padding-start: 0.5rem;
+    }
+  }
+
+  .tuition-slider {
+    padding: 0 0 30px;
+    border-bottom: 1px solid #eee;
+
+    &::part(pin) {
+      background: none;
+      color: #000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transform: scale(1.01);
+      top: 2rem;
+      min-width: 28px;
+      height: 28px;
+      transition: transform 120ms ease, background 120ms ease;
+    }
+
+    &::part(pin)::before {
+      content: none;
+    }
+  }
+  ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0.75rem;
+    --background: transparent;
+
+    .label-stack {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      .label-title {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .label-subtitle {
+        font-size: 0.875rem;
+        color: #999;
+        margin-top: 2px;
+      }
+    }
+  }
+}
