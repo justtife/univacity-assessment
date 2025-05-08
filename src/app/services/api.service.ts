@@ -34,21 +34,20 @@ export class ApiService {
   }
 
   // Get all universities with their associated countries
-  getAllUniversitiesWithCountries(): Observable<{ main: string; additional: string }[]> {
+  getAllUniversitiesWithCountries(): Observable<{ id: string, main: string, additional: string }[]> {
     return this.getAllPrograms().pipe(
       map(programs => {
-        const universityMap = new Map<string, string>();
+        const universityMap = new Map<string, { main: string, additional: string }>();
         programs.forEach(program => {
           if (program.university && program.country) {
-            universityMap.set(program.university, program.country);
+            universityMap.set(program.id, {
+              main: program.university,
+              additional: program.country
+            });
           }
         });
-
-        // Convert Map to array of objects with 'main' and 'additional' keys
-        return Array.from(universityMap.entries()).map(([university, country]) => ({
-          main: university,
-          additional: country
-        }));
+        return Array.from(universityMap.entries())
+          .map(([id, { main, additional }]) => ({ id, main, additional }));
       }),
       catchError(error => {
         console.error('Error getting universities with countries:', error);
@@ -59,19 +58,18 @@ export class ApiService {
 
 
   // Get all unique degree levels (no flatMap)
-  getAllDegreeLevels(): Observable<{ main: string }[]> {
+  getAllDegreeLevels(): Observable<{ id: string, main: string }[]> {
     return this.getAllPrograms().pipe(
       map(programs => {
-        const allLevels: string[] = [];
+        const levelMap = new Map<string, string>();
         programs.forEach(program => {
           if (program.programDetails?.degree_level) {
-            allLevels.push(program.programDetails.degree_level);
+            levelMap.set(program.id, program.programDetails.degree_level);
           }
         });
-
-        const uniqueSortedLevels = Array.from(new Set(allLevels)).sort();
-
-        return uniqueSortedLevels.map(level => ({ main: level }));
+        return Array.from(levelMap.entries())
+          .map(([id, main]) => ({ id, main }))
+          .sort((a, b) => a.main.localeCompare(b.main));
       }),
       catchError(error => {
         console.error('Error getting degree levels:', error);
@@ -82,11 +80,16 @@ export class ApiService {
 
 
   // Get all unique countries
-  getAllCountries(): Observable<{ main: string }[]> {
+  getAllCountries(): Observable<{ id: string, main: string }[]> {
     return this.getAllPrograms().pipe(
       map(programs => {
-        const uniqueCountries = Array.from(new Set(programs.map(p => p.country)));
-        return uniqueCountries.map(country => ({ main: country }));
+        const countryMap = new Map<string, string>();
+        programs.forEach(program => {
+          if (program.country) {
+            countryMap.set(program.id, program.country);
+          }
+        });
+        return Array.from(countryMap.entries()).map(([id, main]) => ({ id, main }));
       }),
       catchError(error => {
         console.error('Error getting countries:', error);
@@ -94,19 +97,43 @@ export class ApiService {
       })
     );
   }
-
-  // Get all unique languages (no flatMap)
-  getAllLanguages(): Observable<{ main: string }[]> {
+  // Get all unique categories
+  getAllCategories(): Observable<{ id: string, main: string }[]> {
     return this.getAllPrograms().pipe(
       map(programs => {
-        const languages: string[] = [];
+        const categoryMap = new Map<string, string>();
         programs.forEach(program => {
-          if (program.programDetails?.language) {
-            languages.push(...program.programDetails.language);
+          if (program.category) {
+            categoryMap.set(program.id, program.category);
           }
         });
-        const uniqueSortedLanguages = Array.from(new Set(languages)).sort();
-        return uniqueSortedLanguages.map(language => ({ main: language }));
+        return Array.from(categoryMap.entries()).map(([id, main]) => ({ id, main }));
+      }),
+      catchError(error => {
+        console.error('Error getting categories:', error);
+        return of([]);
+      })
+    );
+  }
+
+  // Get all unique languages (no flatMap)
+  getAllLanguages(): Observable<{ id: string, main: string }[]> {
+    return this.getAllPrograms().pipe(
+      map(programs => {
+        const languages: { id: string, main: string }[] = [];
+
+        programs.forEach(program => {
+          if (program.programDetails?.language) {
+            program.programDetails.language.forEach(lang => {
+              languages.push({
+                id: program.id,
+                main: lang
+              });
+            });
+          }
+        });
+        const uniqueLanguages = Array.from(new Map(languages.map(item => [item.main, item])).values());
+        return uniqueLanguages.sort((a, b) => a.main.localeCompare(b.main));
       }),
       catchError(error => {
         console.error('Error getting languages:', error);
@@ -116,9 +143,21 @@ export class ApiService {
   }
 
   // Get all views
-  getAllViews(): Observable<number> {
+  getAllViews(): Observable<{ id: string, main: number }[]> {
     return this.getAllPrograms().pipe(
-      map(programs => programs.reduce((sum, p) => sum + (p.views ?? 0), 0))
+      map(programs => {
+        const viewMap = new Map<string, number>();
+        programs.forEach(program => {
+          if (program.views) {
+            viewMap.set(program.id, program.views);
+          }
+        });
+        return Array.from(viewMap.entries()).map(([id, main]) => ({ id, main }));
+      }),
+      catchError(error => {
+        console.error('Error getting views:', error);
+        return of([]);
+      })
     );
   }
-}
+} 
