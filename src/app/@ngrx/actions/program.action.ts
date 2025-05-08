@@ -8,10 +8,11 @@ export namespace ProgramActions {
         props<{
             programs: Program[];
             universities: OutputFormat[];
+            categories: OutputFormat[];
             countries: OutputFormat[];
             degrees: OutputFormat[];
             languages: OutputFormat[];
-            views: number;
+            views: OutputFormat[];
         }>()
     );
     export const loadAllProgramsFailure = createAction(
