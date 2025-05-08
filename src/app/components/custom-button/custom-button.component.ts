@@ -14,6 +14,7 @@ export class CustomButtonComponent {
   @Input() initialState: boolean = false;
   @Input() color: 'primary' | 'secondary' = 'primary';
   @Input() position: 'start' | 'end' = 'end';
+  @Input() disable: boolean = false;
   @Output() onClick = new EventEmitter<boolean>();
 
   isToggled: boolean = this.initialState;
