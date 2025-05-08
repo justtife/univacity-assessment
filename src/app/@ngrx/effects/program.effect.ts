@@ -21,32 +21,39 @@ export class ProgramEffects {
                         )
                     ),
                     mergeMap(({ programs, universities }) =>
+                        this.apiS.getAllCategories().pipe(
+                            map(categories => ({ programs, universities, categories }))
+                        )
+                    ),
+                    mergeMap(({ programs, universities, categories }) =>
                         this.apiS.getAllCountries().pipe(
-                            map(countries => ({ programs, universities, countries }))
+                            map(countries => ({ programs, universities, categories, countries }))
                         )
                     ),
-                    mergeMap(({ programs, universities, countries }) =>
+                    mergeMap(({ programs, universities, categories, countries }) =>
                         this.apiS.getAllDegreeLevels().pipe(
-                            map(degrees => ({ programs, universities, countries, degrees }))
+                            map(degrees => ({ programs, universities, categories, countries, degrees }))
                         )
                     ),
-                    mergeMap(({ programs, universities, countries, degrees }) =>
+                    mergeMap(({ programs, universities, categories, countries, degrees }) =>
                         this.apiS.getAllLanguages().pipe(
                             map(languages => ({
                                 programs,
                                 universities,
+                                categories,
                                 countries,
                                 degrees,
                                 languages,
                             }))
                         )
                     ),
-                    mergeMap(({ programs, universities, countries, degrees, languages }) =>
+                    mergeMap(({ programs, universities, categories, countries, degrees, languages }) =>
                         this.apiS.getAllViews().pipe(
                             map(views =>
                                 ProgramActions.loadAllProgramsSuccess({
                                     programs,
                                     universities,
+                                    categories,
                                     countries,
                                     degrees,
                                     languages,
@@ -67,7 +74,7 @@ export class ProgramEffects {
         () =>
             this.actions$.pipe(
                 ofType(ProgramActions.loadAllProgramsSuccess),
-                tap(({ programs, universities, countries, degrees, languages, views }) => {
+                tap(({ programs, universities, categories, countries, degrees, languages, views }) => {
                     console.log('Successfully loaded programs data.');
                 })
             ),
