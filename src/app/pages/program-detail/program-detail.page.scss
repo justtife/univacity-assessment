@@ -1,34 +1,22 @@
-/* ===== Base Variables ===== */
-$border-radius-sm: 0.75rem; // 12px
-$border-radius-md: 1.5rem; // 24px
-$border-radius-lg: 2rem; // 32px
-
-$spacing-xs: 0.5rem; // 8px
-$spacing-sm: 0.75rem; // 12px
-$spacing-md: 1rem; // 16px
-$spacing-lg: 1.25rem; // 20px
-$spacing-xl: 1.5rem; // 24px
-
-$font-size-xs: 0.75rem; // 12px
-$font-size-sm: 0.875rem; // 14px
-$font-size-md: 1rem; // 16px
-$font-size-lg: 1.25rem; // 20px
-
-$icon-size-sm: 1rem; // 16px
-$icon-size-md: 1.25rem; // 20px
-$icon-size-lg: 1.5rem; // 24px
-
-/* ===== Component Styles ===== */
+/* ================================
+   Base Styling for Paragraphs
+================================== */
 p {
   color: #666666;
   text-align: justify;
 }
+
+/* =====================================
+   Course Detail Page Styling Wrapper
+===================================== */
 .course-detail-page {
   --padding-start: 0;
   --padding-end: 0;
   font-size: 0.875rem;
 
-  /* Header Section */
+  /* =======================
+     Header Image Section
+  ======================== */
   .header-image {
     position: relative;
     height: 14rem;
@@ -41,6 +29,7 @@ p {
       object-fit: cover;
     }
 
+    // Back Button at Top-Left
     .back-btn {
       position: absolute;
       top: 1rem;
@@ -51,10 +40,12 @@ p {
       border-radius: 50%;
     }
 
+    // Action buttons (e.g. share, like) at Bottom-Right
     .action-buttons {
       position: absolute;
       bottom: 0.75rem;
       right: 0.75rem;
+
       ion-button {
         --background: none;
       }
@@ -68,6 +59,7 @@ p {
       }
     }
 
+    // Main thumbnail or profile image
     .main-image {
       position: absolute;
       bottom: 1rem;
@@ -80,9 +72,12 @@ p {
     }
   }
 
-  /* Course Info Section */
+  /* ======================
+     Course Info Section
+  ======================= */
   .course-info {
     margin: 1rem;
+
     .meta-row {
       display: flex;
       color: #666;
@@ -91,30 +86,35 @@ p {
         display: flex;
         align-items: center;
 
-        ion-icon {
-          margin-right: $spacing-xs;
+        img {
+          width: 1rem;
+          margin-right: 0.5em;
         }
       }
     }
+
     .location {
       font-size: 0.75rem;
       gap: 1rem;
     }
+
     .stats {
-      padding: $spacing-md 0;
+      padding: 1rem 0;
       margin: 2rem 0;
-      border-top: 0.0625rem solid #d1d1d1;
-      border-bottom: 0.0625rem solid #d1d1d1;
+      border-top: 1px solid #d1d1d1;
+      border-bottom: 1px solid #d1d1d1;
       justify-content: space-between;
     }
   }
 
-  /* Common Section Styles */
+  /* ===============================
+     Common Section Styling Block
+  ================================ */
   .section {
     padding: 0 1rem;
     margin-bottom: 2.5rem;
 
-    /* Program Breakdown Grid */
+    /* Program Breakdown as Responsive Grid */
     .breakdown-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(8.125rem, 1fr));
@@ -142,7 +142,7 @@ p {
       }
     }
 
-    /* Collapsible Text */
+    /* Collapsible Paragraph Text */
     p.collapsed {
       color: #666666;
       display: -webkit-box;
@@ -151,7 +151,7 @@ p {
       overflow: hidden;
     }
 
-    /* Requirements List */
+    /* Requirements Checklist Style */
     .requirement-list {
       padding: 0;
       border-radius: 1rem;
@@ -164,22 +164,26 @@ p {
 
         ion-icon {
           color: #333;
-          margin-right: $spacing-sm;
+          margin-right: 0.75rem;
         }
+
         ion-label {
           color: #666666;
           font-size: 1rem;
         }
       }
-      /* Extra Info List */
+
+      /* Additional Information Section */
       .extra-info-list {
         ion-icon {
           color: #184ec9;
         }
+
         div {
           display: flex;
           flex-direction: column;
           padding: 0.5rem;
+
           span {
             font-size: 0.75rem;
             color: #666666;
@@ -190,7 +194,47 @@ p {
   }
 }
 
-/* ===== Responsive Adjustments ===== */
+/* =====================================
+   Course Listing Card (e.g. List Page)
+===================================== */
+.course-listing {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0.5rem;
+}
+
+.university-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  margin-right: 12px;
+  object-fit: contain;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.course-title {
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.course-price {
+  color: #0066cc;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* ===============================
+   Responsive Design Adjustments
+=============================== */
 @media (min-width: 768px) {
   .course-detail-page {
     .header-image {
@@ -198,7 +242,7 @@ p {
     }
 
     .section {
-      padding: $spacing-md $spacing-xl;
+      padding: 1rem 1.5rem;
     }
   }
 }

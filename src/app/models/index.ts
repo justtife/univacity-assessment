@@ -5,6 +5,7 @@ export interface Program {
     shortDesc: string;
     country: string;
     university: string;
+    category: string;
     backImageUrl: string;
     mainImageUrl: string;
     views: number;
@@ -37,6 +38,17 @@ export interface AdditionalInfo {
     applicationDeadline: string;
 }
 export interface OutputFormat {
-    main: string;
+    id: string;
+    main?: string | number;
+    image?: string;
+    subImage?: string;
     additional?: string;
+}
+export interface FilterPrice {
+    lower: number;
+    upper: number;
+    matchedPrograms?: OutputFormat[]
+}
+export interface FilterModel {
+    [type: string]: OutputFormat[] | OutputFormat | FilterPrice | boolean;
 }

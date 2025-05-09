@@ -7,16 +7,19 @@ import { provideEffects } from "@ngrx/effects"
 import { ProgramEffects } from './app/@ngrx/effects/program.effect';
 import { programReducer } from './app/@ngrx/reducers/program.reducer';
 import { addIcons } from 'ionicons';
-import { calendar, book, globe, time, shareOutline, heartOutline, ribbon, language, chevronUpOutline, chevronDownOutline, eyeOutline, trendingUpOutline, sparkles, informationCircleOutline, checkmarkCircleOutline, checkmarkDone, closeOutline, filterOutline, funnelOutline, chevronBack, chevronForward, schoolOutline,timeOutline } from "ionicons/icons"
+import { calendar, book, globe, time, shareOutline, heartOutline, ribbon, language, chevronUpOutline, chevronDownOutline, eyeOutline, trendingUpOutline, sparkles, informationCircleOutline, checkmarkCircleOutline, checkmarkDone, closeOutline, filterOutline, funnelOutline, chevronBack, chevronForward, schoolOutline, timeOutline } from "ionicons/icons"
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
-addIcons({ calendar, time, book, globe, shareOutline, heartOutline, ribbon, language, chevronUpOutline, chevronDownOutline, eyeOutline, trendingUpOutline, sparkles, informationCircleOutline, checkmarkCircleOutline, checkmarkDone, closeOutline, filterOutline, funnelOutline, chevronBack, chevronForward, schoolOutline,timeOutline });
+import { filterReducer } from './app/@ngrx/reducers/filter.reducer';
+import { provideAnimationsAsync } from "@angular/platform-browser/animations/async"
+addIcons({ calendar, time, book, globe, shareOutline, heartOutline, ribbon, language, chevronUpOutline, chevronDownOutline, eyeOutline, trendingUpOutline, sparkles, informationCircleOutline, checkmarkCircleOutline, checkmarkDone, closeOutline, filterOutline, funnelOutline, chevronBack, chevronForward, schoolOutline, timeOutline });
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideHttpClient(),
-    provideStore({ program: programReducer }),
+    provideAnimationsAsync(),
+    provideStore({ programs: programReducer, filters: filterReducer }),
     provideEffects([ProgramEffects]),
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],

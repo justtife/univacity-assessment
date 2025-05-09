@@ -11,33 +11,31 @@
   <!-- Tuition Fee -->
   <section class="filter-section">
     <h3 class="section-label">Tuition Fee</h3>
-
     <div class="range-inputs">
       <ion-input
         label="Min"
         type="text"
-        [value]="'$' + tuitionRange.lower.toLocaleString()"
+        [value]="'$' + (tuitionRange$ | async)?.lower?.toLocaleString()"
         readonly
         class="range-box"
       ></ion-input>
-
       <ion-input
         label="Max"
         type="text"
-        [value]="'$' + tuitionRange.upper.toLocaleString()"
+        [value]="'$' + (tuitionRange$ | async)?.upper?.toLocaleString()"
         readonly
         class="range-box"
       ></ion-input>
     </div>
-
     <ion-range
       dual-knobs="true"
       min="0"
       max="170000"
       step="1000"
-      [(ngModel)]="tuitionRange"
       pin="true"
       [pinFormatter]="formatPinValue"
+      (ngModelChange)="onRangeChange($event)"
+      [ngModel]="tuitionRange$ | async"
       class="tuition-slider"
     ></ion-range>
   </section>
@@ -52,7 +50,15 @@
     >
       <ion-label class="label-stack">
         <div class="label-title">Institutes</div>
-        <div class="label-subtitle">None selected</div>
+        <div class="label-subtitle">
+          @if (filterStatus$ | async; as status) {
+          {{
+            status.institutes.length
+              ? status.institutes.length + " Selected"
+              : "None selected"
+          }}
+          }
+        </div>
       </ion-label>
     </ion-item>
 
@@ -64,7 +70,15 @@
     >
       <ion-label class="label-stack">
         <div class="label-title">Education Level</div>
-        <div class="label-subtitle">None selected</div>
+        <div class="label-subtitle">
+          @if (filterStatus$ | async; as status) {
+          {{
+            status.educationLevels.length
+              ? status.educationLevels.length + " Selected"
+              : "None selected"
+          }}
+          }
+        </div>
       </ion-label>
     </ion-item>
 
@@ -76,19 +90,15 @@
     >
       <ion-label class="label-stack">
         <div class="label-title">Country</div>
-        <div class="label-subtitle">None selected</div>
-      </ion-label>
-    </ion-item>
-
-    <ion-item
-      button
-      detail
-      lines="full"
-      (click)="openIndividualFilter('Discipline')"
-    >
-      <ion-label class="label-stack">
-        <div class="label-title">Discipline</div>
-        <div class="label-subtitle">None selected</div>
+        <div class="label-subtitle">
+          @if (filterStatus$ | async; as status) {
+          {{
+            status.countries.length
+              ? status.countries.length + " Selected"
+              : "None selected"
+          }}
+          }
+        </div>
       </ion-label>
     </ion-item>
 
@@ -100,7 +110,15 @@
     >
       <ion-label class="label-stack">
         <div class="label-title">Study Language</div>
-        <div class="label-subtitle">None selected</div>
+        <div class="label-subtitle">
+          @if (filterStatus$ | async; as status) {
+          {{
+            status.languages.length
+              ? status.languages.length + " Selected"
+              : "None selected"
+          }}
+          }
+        </div>
       </ion-label>
     </ion-item>
 
@@ -112,7 +130,15 @@
     >
       <ion-label class="label-stack">
         <div class="label-title">Attendance</div>
-        <div class="label-subtitle">None selected</div>
+        <div class="label-subtitle">
+          @if (filterStatus$ | async; as status) {
+          {{
+            status.attendance.length
+              ? status.attendance.length + " Selected"
+              : "None selected"
+          }}
+          }
+        </div>
       </ion-label>
     </ion-item>
   </section>
@@ -123,9 +149,11 @@
     <app-custom-button
       buttonText="Clear All"
       color="secondary"
+      (click)="clearAllFilters()"
     ></app-custom-button>
     <app-custom-button
-      [buttonText]="'View ' + data + ' Results'"
+      (onClick)="applyFilter()"
+      [buttonText]="'View ' + (filteredProgramCount$ | async) + ' Results'"
       buttonIcon="chevron-forward"
     ></app-custom-button>
   </div>

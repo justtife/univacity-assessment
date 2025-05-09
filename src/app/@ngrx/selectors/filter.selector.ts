@@ -7,10 +7,6 @@ export namespace FilterSelector {
         select,
         (state) => state.Country
     );
-    export const selectDisciplineFilter = createSelector(
-        select,
-        (state) => state.Discipline
-    );
     export const selectEducationFilter = createSelector(
         select,
         (state) => state['Education Level']
@@ -19,6 +15,10 @@ export namespace FilterSelector {
         select,
         (state) => state.Institutes
     );
+    export const selectCategoryFilter = createSelector(
+        select,
+        (state) => state.Category
+    );
     export const selectLanguageFilter = createSelector(
         select,
         (state) => state['Study Language']
@@ -26,5 +26,17 @@ export namespace FilterSelector {
     export const selectAttendanceFilter = createSelector(
         select,
         (state) => state.Attendance
+    );
+    export const selectTuitionRange = createSelector(
+        select,
+        (state) => state.tuitionRange
+    );
+    export const selectIsTuitionRangeActive = createSelector(
+        select,
+        (state) => state.isTuitionRangeActive
+    );
+    export const selectEnableFilter = createSelector(
+        select,
+        (state) => state.enable
     );
 }

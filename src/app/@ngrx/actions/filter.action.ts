@@ -21,5 +21,9 @@ export namespace FilterActions {
         '[Filter] Set Tuition Range Active',
         props<{ active: boolean }>()
     );
+    export const enableFilter = createAction(
+        '[Filter] Enable Filter',
+        props<{ enable: boolean }>()
+    );
     export const clearAllFilters = createAction('[Filter] Clear All Filters');
 }

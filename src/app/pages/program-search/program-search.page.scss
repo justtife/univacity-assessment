@@ -1,13 +1,4 @@
-//  Header Styling
-ion-header {
-  box-shadow: none;
-}
-
 ion-toolbar {
-  --padding-end: 1rem;
-  --padding-top: 2rem;
-  --background: none;
-
   .dropdown-title {
     display: block;
     margin: 0 auto;
@@ -100,7 +91,7 @@ ion-toolbar {
 
 //  Search Result Summary
 .result-summary {
-  padding: 0rem 1rem 0.5rem;
+  padding: 0.5rem 1rem;
   font-size: 1.125rem;
   font-weight: 600;
 }

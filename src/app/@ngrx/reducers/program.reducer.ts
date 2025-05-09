@@ -10,10 +10,11 @@ export const programReducer = createReducer(
         loading: true,
         error: null,
     })),
-    on(ProgramActions.loadAllProgramsSuccess, (state, { programs, universities, countries, degrees, languages, views }) => ({
+    on(ProgramActions.loadAllProgramsSuccess, (state, { programs, universities, categories, countries, degrees, languages, views }) => ({
         ...state,
         programs,
         universities,
+        categories,
         countries,
         degrees,
         languages,

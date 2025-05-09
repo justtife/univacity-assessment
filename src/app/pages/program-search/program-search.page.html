@@ -14,11 +14,11 @@
         labelPlacement="floating"
         value="Computer Technologies"
       >
-        <ion-select-option value="Computer Technologies">
-          Computer Technologies
+        @for(category of (categories$ |async); track $index) {
+        <ion-select-option [value]="category.main">
+          {{ category.main }}
         </ion-select-option>
-        <ion-select-option value="Design">Design</ion-select-option>
-        <ion-select-option value="Programming">Programming</ion-select-option>
+        }
       </ion-select>
     </div>
   </ion-toolbar>
@@ -37,31 +37,40 @@
     <ion-button fill="clear" (click)="showFilter()">
       <ion-icon slot="start" name="funnel-outline"></ion-icon>
       <ion-label>Filter</ion-label>
-      <ion-badge class="filter-badge">3</ion-badge>
+      @if ((enableFilter |async) && (filteredProgramCount$ |async)){
+      <ion-badge class="filter-badge"
+        >{{(filteredProgramCount$ |async)}}</ion-badge
+      >}
     </ion-button>
   </div>
 </div>
 
 <!--  Active Filter Chips  -->
+@if ((filteredProgramIds$ | async)?.length) {
+<!-- Show chips when there are filtered programs -->
 <div class="chips-container">
   <div class="chips-scroller">
-    @for (chip of activeFilters; track $index) {
-    <ion-chip class="active-chip" (click)="removeFilter(chip)">
-      <ion-label>{{ chip }}</ion-label>
+    @for (chip of (filteredProgramIds$ | async); track chip.id) {
+    <ion-chip class="active-chip" (click)="removeFilter(chip.id)">
+      <ion-label>{{ chip.category }}</ion-label>
       <ion-icon name="close-outline"></ion-icon>
     </ion-chip>
     }
   </div>
 </div>
 
-<!--  Result Heading  -->
+<!-- Result Heading -->
 <div class="result-summary">Search result</div>
+} @else {
+<!-- Show when no filters are applied -->
+<div class="result-summary">All Courses</div>
+}
 
 <!--  Program Listing  -->
 <ion-content>
   <div class="card-area">
     <div class="card-grid">
-      @for (program of programs | async; track program.id){
+      @for (program of programs; track program.id){
       <app-program-card
         (onProgramClick)="programDetail($event)"
         [data]="program"

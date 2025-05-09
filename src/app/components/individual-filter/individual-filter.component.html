@@ -9,42 +9,57 @@
 
 <ion-content class="ion-padding">
   <ion-searchbar
-    placeholder="Search institutes"
+    search-icon=""
     [(ngModel)]="searchTerm"
+    [placeholder]="'Search ' + type.toLowerCase()"
+    (ionInput)="handleSearch($event)"
   ></ion-searchbar>
 
-  <ion-radio-group [(ngModel)]="selectedInstitute">
-    <ion-list>
-      @for (data of filteredItems; track $index){
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="assets/images/logo.png" />
-        </ion-avatar>
-        <ion-label>
-          <h2>{{ data.main }}</h2>
-          @if(data.additional){
-          <p>
-            <img
-              src="assets/images/USA_flag.png"
-              alt="Flag"
-              class="flag-icon"
-            />
-            {{ data.additional }}
-          </p>
-          }
-        </ion-label>
-        <!-- <ion-badge slot="end" color="primary">{{ institute.count }}</ion-badge> -->
-        <ion-radio slot="end" [value]="data.main"></ion-radio> </ion-item
-      >}
-    </ion-list>
-  </ion-radio-group>
+  @if (filteredItems.length > 0;){
+  <ion-list>
+    @for (data of filteredItems; track data.main) {
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/images/logo.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ data.main }}@if (type === 'Attendance') { Views }</h2>
+        @if (data.subImage) {
+        <p>
+          <img
+            [src]="'assets/images/' + data.subImage + '_flag.png'"
+            alt="Flag"
+            class="flag-icon"
+          />
+          {{ data.additional }}
+        </p>
+        }
+      </ion-label>
+      <ion-checkbox
+        slot="end"
+        [checked]="selectedIds.includes(data.id)"
+        (ionChange)="onCheckboxChange(data.id, $event.detail.checked)"
+      ></ion-checkbox>
+    </ion-item>
+    }
+  </ion-list>
+  } @else {
+  <ion-text color="medium">
+    <p class="ion-padding-start">No {{ type.toLowerCase() }} found.</p>
+  </ion-text>
+  }
 </ion-content>
+
 <ion-footer class="footer">
   <div class="footer-buttons">
     <app-custom-button
       buttonText="Clear All"
       color="secondary"
+      (click)="clearAll()"
     ></app-custom-button>
-    <app-custom-button buttonText="Apply Filter"></app-custom-button>
+    <app-custom-button
+      buttonText="Apply Filter"
+      (click)="applyFilter()"
+    ></app-custom-button>
   </div>
 </ion-footer>

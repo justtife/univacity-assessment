@@ -43,6 +43,14 @@ html {
   font-weight: 500;
   margin-bottom: 1rem;
 }
+ion-header {
+  box-shadow: none !important;
+  ion-toolbar {
+    --padding-end: 1rem;
+    --padding-top: 2rem;
+    --background: none;
+  }
+}
 .footer {
   padding: 12px 16px;
   border-top: 1px solid #d1d1d1;
@@ -53,4 +61,11 @@ html {
     justify-content: space-between;
     gap: 12px;
   }
+}
+ion-item {
+  transition: all 0.3s ease;
+}
+
+.section {
+  overflow: hidden;
 }

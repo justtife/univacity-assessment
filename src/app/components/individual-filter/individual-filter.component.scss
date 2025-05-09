@@ -1,18 +1,24 @@
-ion-header {
-  box-shadow: none;
+ion-checkbox::part(container) {
+  border-radius: 50%;
+  border-width: 1px;
 }
+
 .flag-icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
+  width: 1rem;
+  margin-right: 0.25rem;
   vertical-align: middle;
+}
+ion-searchbar {
+  border: 1px solid #d1d1d1;
+  border-radius: 0.5rem;
+  --box-shadow: none;
 }
 
 ion-label h2 {
   margin: 0;
   font-weight: 500;
   p {
-    margin: 4px 0 0;
+    margin: 0.25rem 0 0;
     font-size: 14px;
     color: #666;
     display: flex;
